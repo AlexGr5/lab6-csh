@@ -1,0 +1,63 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace lab6_csh
+{
+    // Класс Урок
+    public class Lesson
+    {
+        private string nameLesson = "";             // Название предмета
+        private Teacher teacher = new Teacher();    // Учитель
+
+        // Конструктор
+        public Lesson()
+        {
+            this.nameLesson = "";
+            this.teacher.Set("", "", "");
+        }
+
+        // Инициализация структуры Уроки
+        public void Set(string Name_Less, Teacher t)
+        {
+            nameLesson = Name_Less;
+            teacher = t;
+        }
+
+        // Обнуление полей
+        public void Null()
+        {
+            this.nameLesson = "";
+            this.teacher.Set("", "", "");
+        }
+
+        // Фун-ии получения данных из полей
+        public string GetNameLess()
+        {
+            return this.nameLesson;
+        }
+
+        public Teacher GetTeacher()
+        {
+            return this.teacher;
+        }
+
+        // Ввод названия урока
+        public void InpInConsol(Teacher t)
+        {
+            Console.Write("Введите название предмета: ");
+            nameLesson = Console.ReadLine();
+            Console.Write("\n");
+            teacher = t;
+
+        }
+
+        // Вывод уроков, передаем адрес, где будет храниться информация
+        public void DisplayInfo()
+        {
+            Console.Write("Название предмета: " + nameLesson + "\n");
+            teacher.DisplayInfo();
+        }
+
+    }
+}
