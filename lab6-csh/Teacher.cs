@@ -37,7 +37,7 @@ namespace lab6_csh
             return this.otch;
         }
 
-        // Инициализация структуры Учитель
+        // Задание полей класса Учитель
         public void Set(string Fam_s, string Name_s, string Otch_s)
         {
             this.fam = Fam_s;
@@ -45,7 +45,7 @@ namespace lab6_csh
             this.otch = Otch_s;
         }
 
-        // Ввод учителя
+        // Ввод ФИО учителя
         public void InpFIO()
         {
             Console.Write("Введите Фамилию учителя: ");

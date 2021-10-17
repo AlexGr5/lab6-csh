@@ -4,6 +4,7 @@ using System.Text;
 
 namespace lab6_csh
 {
+    // Класс ученик
     class Student
     {
         private string fam = "";                    // Фамилия
@@ -35,7 +36,7 @@ namespace lab6_csh
             }
         }
 
-        // Очищение всех полей структуры Ученик (Student)
+        // Очищение всех полей класса Ученик (Student)
         public void Null()
         {
 
@@ -95,7 +96,7 @@ namespace lab6_csh
 
 
 
-        // Инициализация структуры Ученик
+        // Задание полей класса Ученик
         public void Set(string Fam, string Name, string Otch, Mark[] mas_m, int LenMark, Lesson[] mas_l, int LenLess)
         {
             this.fam = Fam;
@@ -117,7 +118,7 @@ namespace lab6_csh
             }
         }
 
-        // Ввод ФИО ученика в структуру
+        // Ввод ФИО ученика в класс
         public void InpStudFIO()
         {
             Console.Write("Введите Фамилию ученика: ");
@@ -193,8 +194,6 @@ namespace lab6_csh
         }
 
         // Вывод ученика
-        // Передаем ученика и флаг для различного вывода уроков и оценок
-        // fl_out (0 или 1)
         public void DisplayShortInfo()
         {
             Console.Write("ФИО ученика: " + fam + " " + name + " " + otch + "\n");
@@ -211,7 +210,7 @@ namespace lab6_csh
 
 
 
-        // Вывод ученика с всеми предметами, даже пустыми
+        // Вывод ученика со всеми предметами, даже пустыми
         public void DispFullInfo()
         {
             Console.Write("ФИО ученика: " + fam + " " + name + " " + otch + "\n");

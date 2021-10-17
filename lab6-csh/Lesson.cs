@@ -17,7 +17,7 @@ namespace lab6_csh
             this.teacher.Set("", "", "");
         }
 
-        // Инициализация структуры Уроки
+        // Задание полей класса Урок
         public void Set(string Name_Less, Teacher t)
         {
             nameLesson = Name_Less;
@@ -52,7 +52,7 @@ namespace lab6_csh
 
         }
 
-        // Вывод уроков, передаем адрес, где будет храниться информация
+        // Вывод урока
         public void DisplayInfo()
         {
             Console.Write("Название предмета: " + nameLesson + "\n");

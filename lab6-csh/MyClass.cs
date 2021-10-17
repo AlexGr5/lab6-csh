@@ -4,6 +4,7 @@ using System.Text;
 
 namespace lab6_csh
 {
+    // Класс Мой Класс
     class MyClass
     {
         private string className = "";                  // Название класса
@@ -25,7 +26,7 @@ namespace lab6_csh
             }
         }
 
-        // Очищение полей структуры Класс
+        // Очищение полей класса Мой Класс
         public void Null()
         {
             className = "";
@@ -39,7 +40,7 @@ namespace lab6_csh
             }
         }
 
-        // Инициализация структуры Класс
+        // Задание полей класса Мой Класс
         public void Set(string Name, string Year, Student[] mas, int LenStud)
         {
             this.className = Name;
@@ -67,7 +68,7 @@ namespace lab6_csh
 
 
 
-        // Ввод данных в структуру Класс
+        // Ввод данных в Мой Класс
         public void InpNameYear()
         {
             Console.Write("Введите название класса: ");
@@ -78,7 +79,7 @@ namespace lab6_csh
             Console.Write("\n");
         }
 
-        // Добавление к классу ченика
+        // Добавление к классу ученика
         public bool AddStud(Student st)
         {
             bool fl = false;
@@ -92,8 +93,7 @@ namespace lab6_csh
             return fl;
         }
 
-        // Вывод данных из структуры Класс
-        // fl_out (0 или 1)
+        // Вывод данных из класса Мой Класс
         public void DisplayShortInfo()
         {
 
@@ -111,7 +111,7 @@ namespace lab6_csh
 
         }
 
-        // Выод всех данных из структуры Класс
+        // Выод всех данных из класса Мой Класс
         public void DispFullInfo()
         {
             Console.Write("Название класса: " + className + "\n"); ;
@@ -127,7 +127,7 @@ namespace lab6_csh
             }
         }
 
-        // Функция по нахождению лучших учеников в классе
+        // Функция по нахождению лучших учеников в 'классе'
         public bool BestStud()
         {
             double[] mas_m = new double[32];
@@ -180,7 +180,7 @@ namespace lab6_csh
             return exit;
         }
 
-        // Функция по нахождению худших учеников в классе
+        // Функция по нахождению худших учеников в 'классе'
         public bool BedStud()
         {
             double[] mas_m = new double[32];

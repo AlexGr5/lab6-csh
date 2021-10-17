@@ -4,6 +4,7 @@ using System.Text;
 
 namespace lab6_csh
 {
+    // Класс оценка
     public class Mark
     {
         private int value = 0;          // Оценка
@@ -14,7 +15,7 @@ namespace lab6_csh
             value = 0;
         }
 
-        // Инициализация структуры Оценка
+        // Задание полей класса Оценка
         public void Set(int v)
         {
             value = v;
@@ -26,7 +27,7 @@ namespace lab6_csh
             return value;
         }
 
-        // Ввод данных в структуру Оценка
+        // Ввод данных в класс Оценка
         public void InpMark()
         {
             string mark;
@@ -36,7 +37,7 @@ namespace lab6_csh
             Console.Write("\n");
         }
 
-        // Вывод данных из структуры
+        // Вывод данных на дисплей
         public void DisplayValue()
         {
             Console.Write("Оценка: " + value + "\n");
