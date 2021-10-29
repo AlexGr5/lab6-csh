@@ -114,10 +114,10 @@ namespace lab6_csh
 			Console.Write("10) Для полей добавить свойства и продемонстрировать работу с ними\n");
 			Console.Write("==================================================================\n");
 			Teacher Oleg = new Teacher();
-			Oleg.fam = "Симонов";
-			Oleg.name = "Олег";
-			Oleg.otch = "Максимович";
-			Console.WriteLine("ФИО: " + Oleg.fam + " " + Oleg.name + " " + Oleg.otch);
+			Oleg.Fam = "Симонов";
+			Oleg.Name = "Олег";
+			Oleg.Otch = "Максимович";
+			Console.WriteLine("ФИО: " + Oleg.Fam + " " + Oleg.Name + " " + Oleg.Otch);
 
 			Console.Write("\n\n");
 

@@ -8,24 +8,30 @@ namespace lab6_csh
     public class Teacher
     {
         // Фамилия
-        public string fam
-        {
-            get { return fam; }
-            set { fam = value; }
-        }
+        private string fam;
 
         // Имя
-        public string name
-        {
-            get { return name; }
-            set { name = value; }
-        }
+        private string name;
 
         // Отчество
-        public string otch
+        private string otch;
+
+        public string Fam
         {
-            get { return otch; }
-            set { otch = value; }
+            get => fam;
+            set => fam = value;
+        }
+
+        public string Name
+        {
+            get => name;
+            set => name = value;
+        }
+
+        public string Otch
+        {
+            get => otch;
+            set => otch = value;
         }
 
         // Конструктор
