@@ -106,9 +106,21 @@ namespace lab6_csh
 
 			Console.Write("\n\n");
 
-			Console.Write("Тест ввода русских символов на примере ввода учителя:" + "\n");
-			teachers[0].InpFIO();
-			teachers[0].DisplayInfo();
+			//Console.Write("Тест ввода русских символов на примере ввода учителя:" + "\n");
+			//teachers[0].InpFIO();
+			//teachers[0].DisplayInfo();
+
+			Console.Write("Лабраторная 7:\n\n");
+			Console.Write("10) Для полей добавить свойства и продемонстрировать работу с ними\n");
+			Console.Write("==================================================================\n");
+			Teacher Oleg = new Teacher();
+			Oleg.fam = "Симонов";
+			Oleg.name = "Олег";
+			Oleg.otch = "Максимович";
+			Console.WriteLine("ФИО: " + Oleg.fam + " " + Oleg.name + " " + Oleg.otch);
+
+			Console.Write("\n\n");
+
 		}
     }
 }
