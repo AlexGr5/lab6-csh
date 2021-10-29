@@ -120,7 +120,24 @@ namespace lab6_csh
 			Console.WriteLine("ФИО: " + Oleg.Fam + " " + Oleg.Name + " " + Oleg.Otch);
 
 			Console.Write("\n\n");
+			Console.Write("11) Cоздать массив объектов и продемонстрировать работу с ним\n");
+			Console.Write("==================================================================\n");
+			Teacher[] teachs = new Teacher[3];
+			for (j = 0; j < 3; j++)
+				teachs[j] = new Teacher();
 
+			teachs[0].Set("Иванова", "Марина", "Витальевна");
+			teachs[1].Set("Погребнеков", "Николай", "Михайлович");
+			teachs[2].Set("Баянова", "Людмила", "Анатольевна");
+
+			Console.Write("Вывод всех учителей:\n");
+			for (i = 0; i < 3; i++)
+				teachs[i].DisplayInfo();
+
+
+			Console.Write("\n\n");
+			Console.Write("11) Cоздать массив объектов и продемонстрировать работу с ним\n");
+			Console.Write("==================================================================\n");
 		}
     }
 }
