@@ -188,7 +188,24 @@ namespace lab6_csh
 			Console.Write("\n\n");
 			Console.Write("14) Продемонстрировать возврат значения через параметр out и через\nпараметр ref. Показать различие этих механизмов\n");
 			Console.Write("==================================================================\n");
+			// Инициализация объектов структуры
+			Mark markForRef = new Mark();
+			Mark markForOut = new Mark();
 
+			// Инициализация переменной для передачи по ref
+			int ArgRef = 2;
+			// Описание переменной для передачи по out
+			int ArgOut;
+
+			markForRef.Set(1);
+			// Передача аргумента по ref
+			markForRef.TestRef4(ref ArgRef);
+			Console.WriteLine("Аргумент функции после использования по ref: " + ArgRef);
+
+			markForOut.Set(2);
+			// Передача аргумента по out
+			markForOut.TestOut5(out ArgOut);
+			Console.WriteLine("Аргумент функции после использования по out: " + ArgOut);
 		}
     }
 }

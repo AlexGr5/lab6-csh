@@ -4,7 +4,7 @@ using System.Text;
 
 namespace lab6_csh
 {
-    // Класс оценка
+    // Структура оценка
     public struct Mark
     {
         private int value /*= 0*/;          // Оценка
@@ -41,7 +41,18 @@ namespace lab6_csh
         public void DisplayValue()
         {
             Console.Write("Оценка: " + value + "\n");
+        }
 
+        // Проверка возврата значения по ref
+        public void TestRef4(ref int Value)
+        {
+            Value = 4;
+        }
+
+        // Проверка возврата значения по out
+        public void TestOut5(out int Value)
+        {
+            Value = 5;
         }
 
     }
