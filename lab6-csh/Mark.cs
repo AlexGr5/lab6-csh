@@ -15,6 +15,12 @@ namespace lab6_csh
         //    value = 0;
         //}
 
+        // Конструктор с параметром
+        public Mark(int Value)
+        {
+            value = Value;
+        }
+
         // Задание полей класса Оценка
         public void Set(int v)
         {
@@ -55,5 +61,10 @@ namespace lab6_csh
             Value = 5;
         }
 
+        public static Mark operator +(Mark operand1, Mark operand2)
+            => new Mark(operand1.value + operand2.value);
+
+        public static Mark operator ++(Mark operand1)
+            => new Mark(operand1.value + 1);
     }
 }

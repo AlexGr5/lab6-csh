@@ -113,9 +113,15 @@ namespace lab6_csh
 
 
 
+
+			// Лабораторная №7
+			//===========================================================================================================
+
+
 			Console.Write("Лабраторная 7:\n\n");
 			Console.Write("10) Для полей добавить свойства и продемонстрировать работу с ними\n");
 			Console.Write("==================================================================\n");
+			Console.Write("На примере класса Учитель\n");
 			Teacher Oleg = new Teacher();
 			Oleg.Fam = "Симонов";
 			Oleg.Name = "Олег";
@@ -125,6 +131,7 @@ namespace lab6_csh
 			Console.Write("\n\n");
 			Console.Write("11) Cоздать массив объектов и продемонстрировать работу с ним\n");
 			Console.Write("==================================================================\n");
+			Console.Write("На примере класса Учитель\n");
 			Teacher[] teachs = new Teacher[3];
 			for (j = 0; j < 3; j++)
 				teachs[j] = new Teacher();
@@ -141,6 +148,7 @@ namespace lab6_csh
 			Console.Write("\n\n");
 			Console.Write("12) В отдельной ветке проекта заменить класс (class) \nна структуру (struct). Продемонстрировать различие \nмежду присваиванием объектов класса и структуры\n");
 			Console.Write("==================================================================\n");
+			Console.Write("На примере класса Учитель и структуры Оценка\n");
 			Mark good = new Mark();
 			Teacher Ivan = new Teacher();
 			good.Set(4);
@@ -179,6 +187,7 @@ namespace lab6_csh
 			Console.Write("\n\n");
 			Console.Write("13) Продемонстрировать работу с массивом объектов\n");
 			Console.Write("==================================================================\n");
+			Console.Write("На примере структуры Оценка\n");
 			Mark[] marksTest = new Mark[5];
 			Console.Write("Массив оценок:\n");
 			for (j = 0; j < 5; j++)
@@ -191,6 +200,7 @@ namespace lab6_csh
 			Console.Write("\n\n");
 			Console.Write("14) Продемонстрировать возврат значения через параметр out и через\nпараметр ref. Показать различие этих механизмов\n");
 			Console.Write("==================================================================\n");
+			Console.Write("На примере структуры оценка\n");
 			// Инициализация объектов структуры
 			Mark markForRef = new Mark();
 			Mark markForOut = new Mark();
@@ -211,11 +221,45 @@ namespace lab6_csh
 			Console.WriteLine("Аргумент функции после использования по out: " + ArgOut);
 
 
+
 			Console.Write("\n\n");
 			Console.Write("15) Продемонстрировать разумное использование оператора this\n");
 			Console.Write("==================================================================\n");
 			Console.Write("На примере класса Урок\n\n");
+			// В методе DisplayImportantInfo() вызывается метод DisplayInfo() через указатель this
 			lessons[0].DisplayImportantInfo();
+
+
+			Console.Write("\n\n");
+			Console.Write("16) Продемонстрировать перегрузку операторов '+', '++'\n");
+			Console.Write("==================================================================\n");
+			Console.Write("На примере структуры Оценка\n");
+			Mark mark1 = new Mark();
+			Mark mark2 = new Mark();
+			Console.Write("Оценка 1 и оценка 2:\n");
+			mark1.Set(1);
+			mark2.Set(2);
+			mark1.DisplayValue();
+			mark2.DisplayValue();
+			Console.Write("Сумма оценок через оператор \'+\':\n");
+			mark1 = mark1 + mark2;
+			mark2 = mark1;
+			mark1.DisplayValue();
+			Console.Write("Прибавление к сумме 1 через постфиксный оператор \'++\': ");
+			(mark1++).DisplayValue();
+			Console.Write("Прибавление к сумме 1 через префиксный оператор \'++\': ");
+			(++mark2).DisplayValue();
+
+
+			Console.Write("\n\n");
+			Console.Write("17) Продемонстрировать обработку строк (string)\n");
+			Console.Write("==================================================================\n");
+			Console.Write("На примере класса Учитель\n");
+			teachers[0].InpFIO();
+			teachers[0].DisplayInfo();
+
+			Console.Write("==================================================================\n");
+			//===========================================================================================================
 		}
-    }
+	}
 }
