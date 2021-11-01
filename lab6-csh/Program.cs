@@ -172,6 +172,22 @@ namespace lab6_csh
 			good.DisplayValue();
 			Ivan.DisplayInfo();
 			Console.WriteLine("Объект класса изменился, потому что копируется ссылка \nна объект, а объект структуры не изменился, т.к. \nкопируются значения полей.");
+			
+			Console.Write("\n\n");
+			Console.Write("13) Продемонстрировать работу с массивом объектов\n");
+			Console.Write("==================================================================\n");
+			Mark[] marksTest = new Mark[5];
+			Console.Write("Массив оценок:\n");
+			for (j = 0; j < 5; j++)
+			{
+				marksTest[j] = new Mark();
+				marksTest[j].Set(j + 1);
+				marksTest[j].DisplayValue();
+			}
+
+			Console.Write("\n\n");
+			Console.Write("14) Продемонстрировать возврат значения через параметр out и через\nпараметр ref. Показать различие этих механизмов\n");
+			Console.Write("==================================================================\n");
 
 		}
     }
