@@ -136,8 +136,43 @@ namespace lab6_csh
 
 
 			Console.Write("\n\n");
-			Console.Write("11) Cоздать массив объектов и продемонстрировать работу с ним\n");
+			Console.Write("12) В отдельной ветке проекта заменить класс (class) \nна структуру (struct). Продемонстрировать различие \nмежду присваиванием объектов класса и структуры\n");
 			Console.Write("==================================================================\n");
+			Mark good = new Mark();
+			Teacher Ivan = new Teacher();
+			good.Set(4);
+			Ivan.Set("Сидоров", "Иван", "Анатольевич");
+			Console.WriteLine("Элемент структуры до копирования:");
+			good.DisplayValue();
+			Console.Write("\n");
+			Console.WriteLine("Элемент класса до копирования:");
+			Ivan.DisplayInfo();
+			Console.Write("\n");
+			Console.WriteLine("Элемент структуры копируется на:");
+			marks2[0].DisplayValue();
+			Console.Write("\n");
+			Console.WriteLine("Элемент класса копируется на:");
+			Oleg.DisplayInfo();
+			Console.Write("\n");
+			good = marks2[0];
+			Ivan = Oleg;
+			Console.WriteLine("Элемент структуры после копирования:");
+			good.DisplayValue();
+			Console.Write("\n");
+			Console.WriteLine("Элемент класса после копирования:");
+			Ivan.DisplayInfo();
+			Console.Write("\n\n");
+			Console.WriteLine("Если изменить те объекты, на которые менялись объект класса и структуры:");
+			marks2[0].Set(3);
+			Oleg.Set("Погребнеков", "Николай", "Михайлович");
+			marks2[0].DisplayValue();
+			Oleg.DisplayInfo();
+			Console.Write("\n");
+			Console.WriteLine("То новые объектыбудут таковыми:");
+			good.DisplayValue();
+			Ivan.DisplayInfo();
+			Console.WriteLine("Объект класса изменился, потому что копируется ссылка \nна объект, а объект структуры не изменился, т.к. \nкопируются значения полей.");
+
 		}
     }
 }

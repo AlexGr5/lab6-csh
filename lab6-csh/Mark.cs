@@ -5,15 +5,15 @@ using System.Text;
 namespace lab6_csh
 {
     // Класс оценка
-    public class Mark
+    public struct Mark
     {
-        private int value = 0;          // Оценка
+        private int value /*= 0*/;          // Оценка
 
         // Конструктор
-        public Mark()
-        {
-            value = 0;
-        }
+        //public Mark()
+        //{
+        //    value = 0;
+        //}
 
         // Задание полей класса Оценка
         public void Set(int v)
