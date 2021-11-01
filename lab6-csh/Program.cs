@@ -110,6 +110,9 @@ namespace lab6_csh
 			//teachers[0].InpFIO();
 			//teachers[0].DisplayInfo();
 
+
+
+
 			Console.Write("Лабраторная 7:\n\n");
 			Console.Write("10) Для полей добавить свойства и продемонстрировать работу с ними\n");
 			Console.Write("==================================================================\n");
@@ -206,6 +209,13 @@ namespace lab6_csh
 			// Передача аргумента по out
 			markForOut.TestOut5(out ArgOut);
 			Console.WriteLine("Аргумент функции после использования по out: " + ArgOut);
+
+
+			Console.Write("\n\n");
+			Console.Write("15) Продемонстрировать разумное использование оператора this\n");
+			Console.Write("==================================================================\n");
+			Console.Write("На примере класса Урок\n\n");
+			lessons[0].DisplayImportantInfo();
 		}
     }
 }

@@ -59,5 +59,13 @@ namespace lab6_csh
             teacher.DisplayInfo();
         }
 
+        // Вывод урока с подписью, что этот урок очень важен
+        public void DisplayImportantInfo()
+        {
+            Console.Write("Этот урок очень важен!\n");
+            // Вызыв метода через указатель this
+            this.DisplayInfo();
+        }
+
     }
 }
