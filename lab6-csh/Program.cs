@@ -256,8 +256,8 @@ namespace lab6_csh
 			Console.Write("\n\n");
 			Console.Write("17) Продемонстрировать обработку строк (string)\n");
 			Console.Write("==================================================================\n");
-			Console.Write("На примере класса Учитель\n");
-			teachers[0].InpFIO();
+			Console.Write("На примере класса Учитель, добавление ко всем полям пробелов\n");
+			teachers[0].AdditionSapces();
 			teachers[0].DisplayInfo();
 
 			Console.Write("==================================================================\n");

@@ -85,5 +85,12 @@ namespace lab6_csh
 
         }
 
+        // Обработка строк
+        public void AdditionSapces()
+        {
+            fam = fam + "  ";
+            name = name + "  ";
+            otch = otch + "  ";
+        }
     }
 }
