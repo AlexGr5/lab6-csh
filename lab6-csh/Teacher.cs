@@ -16,6 +16,10 @@ namespace lab6_csh
         // Отчество
         private string otch;
 
+        private static Teacher lastTeacher;
+        private Teacher prev;
+        private Teacher next;
+
         public string Fam
         {
             get => fam;
@@ -42,6 +46,13 @@ namespace lab6_csh
             otch = "";
         }
 
+        // Конструктор с параметрами
+        public Teacher(string Fam_s, string Name_s, string Otch_s)
+        {
+            this.fam = Fam_s;
+            this.name = Name_s;
+            this.otch = Otch_s;
+        }
 
         // Фун-ии получения данных из полей
         public string GetFam()
@@ -91,6 +102,48 @@ namespace lab6_csh
             fam = fam + "  ";
             name = name + "  ";
             otch = otch + "  ";
+        }
+
+
+        // Новый список
+        public void NewList()
+        {
+            lastTeacher = null;
+        }
+
+        // Добавление элемента в конец списка
+        public void Add()
+        {
+            if (lastTeacher == null)
+                this.prev = null;
+            else
+            {
+                lastTeacher.next = this;
+                prev = lastTeacher;
+            }
+            lastTeacher = this;
+            this.next = null;
+        }
+
+        // Вывод на дисплей содержимого списка
+        public void reprint()
+        {
+            Teacher uk;   // Вспомогательная ссылка
+            uk = lastTeacher;
+            if (uk == null)
+            {
+                Console.WriteLine("Список пуст!");
+                return;
+            }
+            else
+                Console.WriteLine("\nСодержимое списка:\n");
+
+            // Цикл печати в обратном порядке значений элементов списка:
+            while (uk != null)
+            {
+                Console.WriteLine(uk.GetFam() + " " + uk.GetName() + " " + uk.GetOtch() +  " " + "\t");
+                uk = uk.prev;
+            }
         }
     }
 }

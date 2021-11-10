@@ -190,13 +190,13 @@ namespace lab6_csh
 			Console.Write("13) Продемонстрировать работу с массивом объектов\n");
 			Console.Write("==================================================================\n");
 			Console.Write("На примере структуры Оценка\n");
-			Mark[] marksTest = new Mark[5];
+			Mark[][] marksTest = new Mark[1][];
+			marksTest[0] = new Mark[5];
 			Console.Write("Массив оценок:\n");
 			for (j = 0; j < 5; j++)
 			{
-				marksTest[j] = new Mark();
-				marksTest[j].Set(j + 1);
-				marksTest[j].DisplayValue();
+				marksTest[0][j].Set(j + 1);
+				marksTest[0][j].DisplayValue();
 			}
 
 			Console.Write("\n\n");
@@ -227,9 +227,24 @@ namespace lab6_csh
 			Console.Write("\n\n");
 			Console.Write("15) Продемонстрировать разумное использование оператора this\n");
 			Console.Write("==================================================================\n");
-			Console.Write("На примере класса Урок\n\n");
-			// В методе DisplayImportantInfo() вызывается метод DisplayInfo() через указатель this
-			lessons[0].DisplayImportantInfo();
+			Console.Write("На примере класса Учитель, двусвязанный список\n\n");
+
+			// Формирование объектов класса Teacher:
+			teachers[0].Set("Иванова", "Марина", "Витальевна");
+			teachers[1].Set("Погребнеков", "Николай", "Михайлович");
+			teachers[2].Set("Баянова", "Людмила", "Анатольевна");
+
+			teachers[0].NewList();
+
+			// Вызов статической компанентной функции:
+			teachers[2].reprint();
+
+			// Включение созданных компанентов в двусвязанный список:
+			teachers[0].Add(); teachers[1].Add(); teachers[2].Add();
+
+			// Печать в обратном порядке значений элементов списка:
+			teachers[2].reprint();
+
 
 
 			Console.Write("\n\n");
