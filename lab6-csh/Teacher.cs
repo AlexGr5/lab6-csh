@@ -106,7 +106,7 @@ namespace lab6_csh
 
 
         // Новый список
-        public void NewList()
+        public static void NewList()
         {
             lastTeacher = null;
         }
