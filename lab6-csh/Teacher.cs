@@ -125,6 +125,7 @@ namespace lab6_csh
             this.next = null;
         }
 
+
         // Вывод на дисплей содержимого списка
         public static void reprint()
         {
