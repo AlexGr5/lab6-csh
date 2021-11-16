@@ -126,7 +126,7 @@ namespace lab6_csh
         }
 
         // Вывод на дисплей содержимого списка
-        public void reprint()
+        public static void reprint()
         {
             Teacher uk;   // Вспомогательная ссылка
             uk = lastTeacher;

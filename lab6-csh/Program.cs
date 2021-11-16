@@ -237,13 +237,13 @@ namespace lab6_csh
 			teachers[0].NewList();
 
 			// Вызов статической компанентной функции:
-			teachers[2].reprint();
+			Teacher.reprint();
 
 			// Включение созданных компанентов в двусвязанный список:
 			teachers[0].Add(); teachers[1].Add(); teachers[2].Add();
 
 			// Печать в обратном порядке значений элементов списка:
-			teachers[2].reprint();
+			Teacher.reprint();
 
 
 
