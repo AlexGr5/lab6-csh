@@ -46,12 +46,20 @@ namespace lab6_csh
             otch = "";
         }
 
-        // Конструктор с параметрами
-        public Teacher(string Fam_s, string Name_s, string Otch_s)
+        // Конструктор с одним параметром
+        public Teacher(string Fam)
         {
-            this.fam = Fam_s;
-            this.name = Name_s;
-            this.otch = Otch_s;
+            fam = Fam;
+            name = "";
+            otch = "";
+        }
+
+        // Конструктор с параметрами
+        public Teacher(string Fam, string Name, string Otch)
+        {
+            fam = Fam;
+            name = Name;
+            otch = Otch;
         }
 
         // Фун-ии получения данных из полей
@@ -68,6 +76,24 @@ namespace lab6_csh
         public string GetOtch()
         {
             return this.otch;
+        }
+
+        // Установить фамилию
+        public void SetFam(string Fam)
+        {
+            fam = Fam;
+        }
+
+        // Установить имя
+        public void SetName(string Name)
+        {
+            name = Name;
+        }
+
+        // Установить отчество
+        public void SetOtch(string Otch)
+        {
+            otch = Otch;
         }
 
         // Задание полей класса Учитель

@@ -17,6 +17,32 @@ namespace lab6_csh
             this.teacher.Set("", "", "");
         }
 
+        // Конструктор с одним параметром
+        public Lesson(string NameLesson)
+        {
+            nameLesson = NameLesson;
+            teacher.Set("", "", "");
+        }
+
+        // Конструктор с параметрами
+        public Lesson(string Name_Less, Teacher Teacher1)
+        {
+            nameLesson = Name_Less;
+            teacher = Teacher1;
+        }
+
+        // Установить название урока
+        public void SetLesson(string NameLesson)
+        {
+            nameLesson = NameLesson;
+        }
+
+        // Установить учителя
+        public void SetTeacher(Teacher Teacher1)
+        {
+            teacher = Teacher1;
+        }
+
         // Задание полей класса Урок
         public void Set(string Name_Less, Teacher t)
         {
