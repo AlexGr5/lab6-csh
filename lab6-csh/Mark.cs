@@ -5,15 +5,15 @@ using System.Text;
 namespace lab6_csh
 {
     // Структура оценка
-    public struct Mark
+    public class Mark
     {
-        private int value /*= 0*/;          // Оценка
+        private int value = 0;          // Оценка
 
         // Конструктор
-        //public Mark()
-        //{
-        //    value = 0;
-        //}
+        public Mark()
+        {
+            value = 0;
+        }
 
         // Конструктор с параметром
         public Mark(int Value)

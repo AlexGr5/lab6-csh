@@ -36,6 +36,51 @@ namespace lab6_csh
             }
         }
 
+        // Конструктор с одним параметром
+        public Student(string Fam)
+        {
+            fam = Fam;
+            name = "";
+            otch = "";
+            Lesson L = new Lesson();
+            Mark M = new Mark();
+            L.Null();
+            M.Set(0);
+            countLess = 0;
+            for (int i = 0; i< 20; i++)
+            {
+                lessons[i] = L;
+            }
+
+            for (int i = 0; i< 20; i++)
+            {
+                marks[i] = M;
+            }
+
+        }
+
+        // Конструктор с параметрами
+        public Student(string Fam, string Name, string Otch, Mark[] mas_m, int LenMark, Lesson[] mas_l, int LenLess)
+        {
+            this.fam = Fam;
+            this.name = Name;
+            this.otch = Otch;
+
+            this.countLess = 0;
+
+            int i = 0;
+            for (i = 0; i < LenLess && i < 20; i++)
+            {
+                lessons[i] = mas_l[i];
+                this.countLess++;
+            }
+
+            for (i = 0; i < LenMark && i < 20; i++)
+            {
+                marks[i] = mas_m[i];
+            }
+        }
+
         // Очищение всех полей класса Ученик (Student)
         public void Null()
         {
@@ -94,7 +139,43 @@ namespace lab6_csh
             return l;
         }
 
+        // Установка фамилии
+        public void SetFam(string Fam)
+        {
+            fam = Fam;
+        }
 
+        // Установка Имени
+        public void SetName(string Name)
+        {
+            name = Name;
+        }
+
+        // Установка Отчества
+        public void SetOtch(string Otch)
+        {
+            otch = Otch;
+        }
+
+        // Установка Оценок
+        public void SetMarks(Mark[] mas_m, int LenMark)
+        {
+            for (int i = 0; i < LenMark && i < 20; i++)
+            {
+                marks[i] = mas_m[i];
+            }
+        }
+
+        // Установка Уроков
+        public void SetLessons(Lesson[] mas_l, int LenLess)
+        {
+            int i = 0;
+            for (i = 0; i < LenLess && i < 20; i++)
+            {
+                lessons[i] = mas_l[i];
+                this.countLess++;
+            }
+        }
 
         // Задание полей класса Ученик
         public void Set(string Fam, string Name, string Otch, Mark[] mas_m, int LenMark, Lesson[] mas_l, int LenLess)
@@ -200,10 +281,9 @@ namespace lab6_csh
 
             Console.Write("Уроки:" + "\n");
             int i = 0;
-            while (lessons[i].GetNameLess() != "")
+            for(i = 0; i < countLess; i++)
             {
                 Console.Write(" * " + lessons[i].GetNameLess() + " * " + marks[i].Get() + " * " + "\n");
-                i++;
             }
         }
 
@@ -215,12 +295,12 @@ namespace lab6_csh
         {
             Console.Write("ФИО ученика: " + fam + " " + name + " " + otch + "\n");
 
-
             Console.Write("Уроки:" + "\n");
             for (int i = 0; i < 20; i++)
             {
                 lessons[i].DisplayInfo();
             }
+
             Console.Write("Оценки:" + "\n");
             for (int i = 0; i < 20; i++)
             {

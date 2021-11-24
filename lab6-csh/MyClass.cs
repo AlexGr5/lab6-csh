@@ -26,6 +26,33 @@ namespace lab6_csh
             }
         }
 
+        // Конструктор с одним параметром
+        public MyClass(string ClassName)
+        {
+            className = ClassName;
+            yearOfStudy = "";
+            contStuds = 0;
+            Student S = new Student();
+            S.Null();
+            for (int i = 0; i< 32; i++)
+            {
+                students[i] = S;
+            }
+        }
+
+        // Конструктор с параметрами
+        public MyClass(string Name, string Year, Student[] mas, int LenStud)
+        {
+            this.className = Name;
+            this.yearOfStudy = Year;
+            this.contStuds = 0;
+            for (int i = 0; i < 32 && i < LenStud; i++)
+            {
+                students[i] = mas[i];
+                contStuds++;
+            }
+        }
+
         // Очищение полей класса Мой Класс
         public void Null()
         {
@@ -40,6 +67,29 @@ namespace lab6_csh
             }
         }
 
+        // Установка Названия
+        public void SetName(string Name)
+        {
+            className = Name;
+        }
+
+        // Установка Года
+        public void SetYear(string Year)
+        {
+            yearOfStudy = Year;
+        }
+
+        // Установка учеников
+        public void SetStuds(Student[] mas, int LenStud)
+        {
+            for (int i = 0; i < 32 && i < LenStud; i++)
+            {
+                students[i] = mas[i];
+                contStuds++;
+            }
+        }
+
+
         // Задание полей класса Мой Класс
         public void Set(string Name, string Year, Student[] mas, int LenStud)
         {
@@ -51,6 +101,7 @@ namespace lab6_csh
             for (int i = 0; i < 32 && i < LenStud; i++)
             {
                 students[i] = mas[i];
+                contStuds++;
             }
         }
 
@@ -103,10 +154,9 @@ namespace lab6_csh
             Console.Write("Ученики:" + "\n");
 
             int i = 0;
-            while (students[i].GetFam() != "")
+            for (i = 0; i < contStuds; i++)
             {
                 students[i].DisplayShortInfo();
-                i++;
             }
 
         }
@@ -120,10 +170,9 @@ namespace lab6_csh
             Console.Write("Ученики:" + "\n");
 
             int i = 0;
-            while (students[i].GetFam() != "")
+            for(i = 0; i < 30; i++)
             {
                 students[i].DispFullInfo();
-                i++;
             }
         }
 

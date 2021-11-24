@@ -90,7 +90,7 @@ namespace lab6_csh
 
 
 
-			Mark markParamLess, markParam(3);
+			Mark markParamLess = new Mark(), markParam = new Mark(3);
 
 			Console.WriteLine("Конструкторы класса Оценка:");
 			Console.WriteLine("1) Конструктор без параметров:");
@@ -101,7 +101,7 @@ namespace lab6_csh
 
 
 
-			Student uchenik1, uchenik2("Герасимов"), uchenik3("Герасимов", "Владимир", "Анатольевич", marks2, 3, lessons, 3);
+			Student uchenik1 = new Student(), uchenik2 = new Student("Герасимов"), uchenik3 = new Student("Герасимов", "Владимир", "Анатольевич", marks2, 3, lessons, 3);
 			Console.WriteLine("Конструкторы класса Ученик:");
 			Console.WriteLine("1) Конструктор без параметров:");
 			uchenik1.DisplayShortInfo();
@@ -111,7 +111,7 @@ namespace lab6_csh
 			uchenik3.DisplayShortInfo();
 			Console.WriteLine("\n\n");
 
-			MyClass class1, class2("5А"), class3("2В", "2010", students, 3);
+			MyClass class1 = new MyClass(), class2 = new MyClass("5А"), class3 = new MyClass("2В", "2010", students, 3);
 			Console.WriteLine("Конструкторы класса Мой Класс:");
 			Console.WriteLine("1) Конструктор без параметров:");
 			class1.DisplayShortInfo();
@@ -119,6 +119,16 @@ namespace lab6_csh
 			class2.DisplayShortInfo();
 			Console.WriteLine("3) Конструктор с параметрами:");
 			class3.DisplayShortInfo();
+			Console.WriteLine("\n\n");
+
+
+
+			Teacher[] teacherArr = new Teacher[3];
+			for (j = 0; j < 3; j++)
+				teacherArr[j] = new Teacher("Иванов" + (j + 1));
+			Console.WriteLine("Инициализировать небольшой массив конструктором с одним параметром:");
+			for (j = 0; j < 3; j++)
+				teacherArr[j].DisplayInfo();
 			Console.WriteLine("\n\n");
 		}
 	}
