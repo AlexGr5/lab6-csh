@@ -130,6 +130,40 @@ namespace lab6_csh
 			for (j = 0; j < 3; j++)
 				teacherArr[j].DisplayInfo();
 			Console.WriteLine("\n\n");
+
+
+
+			Console.WriteLine("Продемонстрировать различие между мелким и глубоким копированием:");
+			Mark markTestCopy1 = new Mark(4), markTestCopy2 = new Mark(5);
+			Console.WriteLine("До копии 2 объекта класса Оценка:");
+			markTestCopy1.DisplayValue();
+			markTestCopy2.DisplayValue();
+			Console.WriteLine("");
+
+			markTestCopy2 = markTestCopy1.ShallowCopy();
+
+			Console.WriteLine("Поверхностная копия 1-го объекта во 2-ой:");
+			markTestCopy1.DisplayValue();
+			markTestCopy2.DisplayValue();
+			Console.WriteLine("");
+			Console.WriteLine("Изменение 1-го объекта, а 2-ой не трогается:");
+			markTestCopy1.Set(3);
+			markTestCopy1.DisplayValue();
+			markTestCopy2.DisplayValue();
+			Console.WriteLine("");
+
+			markTestCopy1.Set(4);
+			markTestCopy2 = markTestCopy1.DeepCopy();
+
+			Console.WriteLine("Глубокая копия 1-го объекта во 2-ой:");
+			markTestCopy1.DisplayValue();
+			markTestCopy2.DisplayValue();
+			Console.WriteLine("");
+			Console.WriteLine("Изменение 1-го объекта, а 2-ой не трогается:");
+			markTestCopy1.Set(3);
+			markTestCopy1.DisplayValue();
+			markTestCopy2.DisplayValue();
+			Console.WriteLine("\n\n");
 		}
 	}
 }

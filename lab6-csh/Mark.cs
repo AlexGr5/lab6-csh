@@ -66,5 +66,19 @@ namespace lab6_csh
 
         public static Mark operator ++(Mark operand1)
             => new Mark(operand1.value + 1);
+
+        // Поверхностная копия
+        public Mark ShallowCopy()
+        {
+            return (Mark)this;
+        }
+
+        // Глубокая копия
+        public Mark DeepCopy()
+        {
+            Mark other = (Mark)this.MemberwiseClone();
+            other.Set(value);
+            return other;
+        }
     }
 }
