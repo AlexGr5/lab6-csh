@@ -221,6 +221,7 @@ namespace lab6_csh
                 if (lessons[i].GetNameLess() == "")
                 {
                     lessons[i] = ls;
+                    this.countLess++;
                     fl = true;
                 }
             }
@@ -240,6 +241,7 @@ namespace lab6_csh
                 {
                     lessons[i] = ls;
                     marks[i] = m;
+                    this.countLess++;
                     fl = true;
                 }
             }
