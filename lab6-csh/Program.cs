@@ -135,12 +135,9 @@ namespace lab6_csh
 
 			Console.WriteLine("Продемонстрировать различие между мелким и глубоким копированием:");
 			Mark markTestCopy1 = new Mark(4), markTestCopy2 = new Mark(5);
-			Console.WriteLine("До копии 2 объекта класса Оценка:");
-			markTestCopy1.DisplayValue();
-			markTestCopy2.DisplayValue();
-			Console.WriteLine("");
 
-			markTestCopy2 = markTestCopy1.ShallowCopy();
+			//markTestCopy2 = markTestCopy1.ShallowCopy();
+			markTestCopy2 = markTestCopy1;
 
 			Console.WriteLine("Поверхностная копия 1-го объекта во 2-ой:");
 			markTestCopy1.DisplayValue();
