@@ -61,7 +61,7 @@ namespace lab6_csh
                 for (int i = 0; i < mark.Length; i++)
                 {
                     if ((mark[i] < '0') || (mark[i] > '9'))
-                        throw new Exception("It string is not number!");       // выбрасывается исключение типа const char*
+                        throw new Exception("It string is not number!");       // выбрасывается исключение
                 }
                 Set(Convert.ToInt32(mark));
             }
