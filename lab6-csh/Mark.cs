@@ -18,13 +18,17 @@ namespace lab6_csh
         // Конструктор с параметром
         public Mark(int Value)
         {
-            value = Value;
+            this.value = 0;
+            if (IsRightMark(Value))
+                this.value = Value;
         }
 
         // Задание полей класса Оценка
         public void Set(int v)
         {
-            value = v;
+            this.value = 0;
+            if (IsRightMark(v))
+                this.value = v;
         }
 
         // Получение оценки
@@ -33,6 +37,7 @@ namespace lab6_csh
             return value;
         }
 
+        /*
         // Ввод данных в класс Оценка
         public void InpMark()
         {
@@ -42,9 +47,33 @@ namespace lab6_csh
             value = Convert.ToInt32(mark);
             Console.Write("\n");
         }
+        */
 
-        // Вывод данных на дисплей
-        public void DisplayValue()
+        // Ввод данных в структуру Оценка
+        public void InpMark()
+        {
+            string mark;
+            Console.Write("Введите оценку: ");
+            mark = Console.ReadLine();
+
+            try                                                 // ищем исключения внутри этого блока и отправляем их в соответствующий обработчик catch          
+            {
+                for (int i = 0; i < mark.Length; i++)
+                {
+                    if ((mark[i] < '0') || (mark[i] > '9'))
+                        throw new Exception("It string is not number!");       // выбрасывается исключение типа const char*
+                }
+                Set(Convert.ToInt32(mark));
+            }
+            catch (Exception ex)                       // обработчик исключений типа const char*
+            {
+                Console.Write("Error: " + ex.Message + '\n');
+                //std::cerr << "Error: " << "It string is not number!" << '\n';
+            }
+        }
+
+            // Вывод данных на дисплей
+            public void DisplayValue()
         {
             Console.Write("Оценка: " + value + "\n");
         }
@@ -80,5 +109,28 @@ namespace lab6_csh
             other.Set(value);
             return other;
         }
-    }
+
+        // Проверка числа на подходяее для оценки
+        public bool IsRightMark(int mark)
+        {
+            bool res = true;
+            try                                                    // ищем исключения внутри этого блока и отправляем их в соответствующий обработчик catch
+            {
+                if (mark < 1 || mark > 5)                          // Если пользователь ввел неверное число, то выбрасывается исключение
+                    throw new Exception("Incorrect value.");       // выбрасывается исключение типа const char*
+                return res;
+            }
+            catch (Exception ex)           // обработчик исключений типа const char*
+            {
+                Console.WriteLine("Error: " + ex.Message + '\n');
+                res = false;
+                return res;
+            }
+
+            return res;
+        
+        }
+
+
+        }
 }
