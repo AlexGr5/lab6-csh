@@ -49,7 +49,7 @@ namespace lab6_csh
         }
         */
 
-        // Ввод данных в структуру Оценка
+        // Ввод данных в Класс Оценка
         public void InpMark()
         {
             string mark;
@@ -72,8 +72,8 @@ namespace lab6_csh
             }
         }
 
-            // Вывод данных на дисплей
-            public void DisplayValue()
+        // Вывод данных на дисплей
+        public void DisplayValue()
         {
             Console.Write("Оценка: " + value + "\n");
         }
@@ -127,8 +127,7 @@ namespace lab6_csh
                 return res;
             }
 
-            return res;
-        
+            //return res;
         }
 
 
