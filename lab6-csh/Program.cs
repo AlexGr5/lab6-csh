@@ -7,17 +7,43 @@ namespace lab6_csh
         static void Main(string[] args)
         {
 
-			Mark mark1 = new Mark();
+			Mark[] mark1 = new Mark[3]; Mark [,] mark2 = new Mark[2,2];
 
-			Console.WriteLine("Лабораторная 10\n");
-			Console.WriteLine("Введите оценку - число в пределах от 1 до 5!\n");
+			mark1[0] = new Mark();
+			mark1[1] = new Mark();
+			mark1[2] = new Mark();
 
-			while (mark1.Get() == 0)
-			{
-				mark1.InpMark();
-			}
+			for (int i = 0; i < 2; i++)
+				for (int j = 0; j < 2; j++)
+					mark2[i, j] = new Mark();
 
-			Console.WriteLine("Введенная оценка: " + mark1.Get());
+
+			// Присваивание
+			//=================================
+			mark1[0].Set(3);
+			mark1[1].Set(4);
+			mark1[2].Set(5);
+
+			int bases = 4;
+
+			for (int i = 0; i < 2; i++)
+				for (int j = 0; j < 2; j++)
+					mark2[i,j].Set(bases + j);
+			//=================================
+
+			// Вывод
+			//=================================
+			Console.WriteLine("Одномерный массив размером [3]");
+			for (int i = 0; i < 3; i++)
+				mark1[i].DisplayValue();
+
+			Console.WriteLine();
+
+			Console.WriteLine("Двумерный массив размером [2][2]");
+			for (int i = 0; i < 2; i++)
+				for (int j = 0; j < 2; j++)
+					mark2[i,j].DisplayValue();
+			//=================================
 
 		}
 	}
