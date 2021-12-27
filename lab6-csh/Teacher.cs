@@ -5,16 +5,16 @@ using System.Text;
 namespace lab6_csh
 {
     // Класс Учитель
-    public class Teacher
+    public class Teacher : Persone
     {
         // Фамилия
-        private string fam;
+        //private string fam;
 
         // Имя
-        private string name;
+        //private string name;
 
         // Отчество
-        private string otch;
+        //private string otch;
 
         private static Teacher lastTeacher;
         private Teacher prev;
@@ -39,27 +39,27 @@ namespace lab6_csh
         }
 
         // Конструктор
-        public Teacher()
+        public Teacher() : base("", "", "")
         {
-            fam = "";
-            name = "";
-            otch = "";
+            //fam = "";
+            //name = "";
+            //otch = "";
         }
 
         // Конструктор с одним параметром
-        public Teacher(string Fam)
+        public Teacher(string Fam) : base(Fam, "", "")
         {
-            fam = Fam;
-            name = "";
-            otch = "";
+            //fam = Fam;
+            //name = "";
+            //otch = "";
         }
 
         // Конструктор с параметрами
-        public Teacher(string Fam, string Name, string Otch)
+        public Teacher(string Fam, string Name, string Otch) : base(Fam, Name, Otch)
         {
-            fam = Fam;
-            name = Name;
-            otch = Otch;
+            //fam = Fam;
+            //name = Name;
+            //otch = Otch;
         }
 
         // Фун-ии получения данных из полей
@@ -105,7 +105,7 @@ namespace lab6_csh
         }
 
         // Ввод ФИО учителя
-        public void InpFIO()
+        public override void InpFIO()
         {
             Console.Write("Введите Фамилию учителя: ");
             fam = Console.ReadLine();
@@ -116,10 +116,16 @@ namespace lab6_csh
         }
 
         // Ввод учителя
-        public void DisplayInfo()
+        public override void DisplayInfo()
         {
             Console.Write("ФИО учителя: " + fam + " " + name + " " + otch + "\n");
 
+        }
+
+        // Метод ToString
+        public String ToString()
+        {
+            return (fam + " " + name + " " + otch);
         }
 
         // Обработка строк
@@ -171,6 +177,28 @@ namespace lab6_csh
                 Console.WriteLine(uk.GetFam() + " " + uk.GetName() + " " + uk.GetOtch() +  " " + "\t");
                 uk = uk.prev;
             }
+        }
+
+        // Виртуальная/не виртуальная функция вывода сообщения на екран, кем является человек (рабочим, учителем, учеником)
+        public override string WhoIs()
+        {
+            return "учитель";
+        }
+
+        // Поверхностное копирование
+        public Teacher ShallowCopy()
+        {
+            return (Teacher)this.MemberwiseClone();
+        }
+
+        // Глубокое копирование
+        public Teacher DeepCopy()
+        {
+            Teacher other = (Teacher)this.MemberwiseClone();
+            other.fam = String.Copy(fam);
+            other.name = String.Copy(name);
+            other.otch = String.Copy(otch);
+            return other;
         }
     }
 }

@@ -156,7 +156,7 @@ namespace lab6_csh
             int i = 0;
             for (i = 0; i < contStuds; i++)
             {
-                students[i].DisplayShortInfo();
+                students[i].DisplayInfo();
             }
 
         }
@@ -220,7 +220,7 @@ namespace lab6_csh
                 for (int j = 0; j < i; j++)
                 {
                     if (mas_m[j] == maxM)
-                        students[j].DisplayShortInfo();
+                        students[j].DisplayInfo();
                 }
 
                 exit = true;
@@ -273,7 +273,7 @@ namespace lab6_csh
                 for (int j = 0; j < i; j++)
                 {
                     if (mas_m[j] == minM)
-                        students[j].DisplayShortInfo();
+                        students[j].DisplayInfo();
                 }
                 exit = true;
             }

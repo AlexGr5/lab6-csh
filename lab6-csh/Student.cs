@@ -5,17 +5,17 @@ using System.Text;
 namespace lab6_csh
 {
     // Класс ученик
-    class Student
+    class Student : Persone
     {
-        private string fam = "";                    // Фамилия
-        private string name = "";                   // Имя
-        private string otch = "";                   // Отчество
+        //private string fam = "";                    // Фамилия
+        //private string name = "";                   // Имя
+        //private string otch = "";                   // Отчество
         private Mark[] marks = new Mark [20];       // Массив оценок
         private Lesson[] lessons = new Lesson[20];  // Массив уроков
         private int countLess = 0;                  // Текущее кол-во уроков
 
         // Конструктор
-        public Student()
+        public Student() : base("", "", "")
         {
             fam = "";
             name = "";
@@ -37,7 +37,7 @@ namespace lab6_csh
         }
 
         // Конструктор с одним параметром
-        public Student(string Fam)
+        public Student(string Fam) : base(Fam, "", "")
         {
             fam = Fam;
             name = "";
@@ -61,6 +61,7 @@ namespace lab6_csh
 
         // Конструктор с параметрами
         public Student(string Fam, string Name, string Otch, Mark[] mas_m, int LenMark, Lesson[] mas_l, int LenLess)
+            : base(Fam, Name, Otch)
         {
             this.fam = Fam;
             this.name = Name;
@@ -200,7 +201,7 @@ namespace lab6_csh
         }
 
         // Ввод ФИО ученика в класс
-        public void InpStudFIO()
+        public override void InpFIO()
         {
             Console.Write("Введите Фамилию ученика: ");
             fam = Console.ReadLine();
@@ -277,7 +278,7 @@ namespace lab6_csh
         }
 
         // Вывод ученика
-        public void DisplayShortInfo()
+        public override void DisplayInfo()
         {
             Console.Write("ФИО ученика: " + fam + " " + name + " " + otch + "\n");
 
@@ -309,5 +310,28 @@ namespace lab6_csh
                 marks[i].DisplayValue();
             }
         }
+
+        // Виртуальная функция вывода сообщения на екран, кем является человек (рабочим, учителем, учеником)
+        public override string WhoIs()
+        {
+            return "ученик";
+        }
+
+        // Поверхностное копирование
+        public Student ShallowCopy()
+        {
+            return (Student)this.MemberwiseClone();
+        }
+
+        // Глубокое копирование
+        public Persone DeepCopy()
+        {
+            Student other = (Student)this.MemberwiseClone();
+            other.fam = String.Copy(fam);
+            other.name = String.Copy(name);
+            other.otch = String.Copy(otch);
+            return other;
+        }
+
     }
 }
