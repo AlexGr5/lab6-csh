@@ -4,38 +4,45 @@ using System.Text;
 
 namespace lab6_csh
 {
-    // Структура оценка
-    public class Mark
+    // Класс оценка
+    public class Mark<T>
     {
-        private int value = 0;          // Оценка
+        private T value;          // Оценка
 
         // Конструктор
         public Mark()
         {
-            value = 0;
+            //value = 0;
         }
 
         // Конструктор с параметром
-        public Mark(int Value)
+        public Mark(T Value)
         {
-            this.value = 0;
-            if (IsRightMark(Value))
+            //this.value = 0;
+            //if (IsRightMark(Value))
                 this.value = Value;
         }
 
         // Задание полей класса Оценка
-        public void Set(int v)
+        public void Set(T v)
         {
-            this.value = 0;
-            if (IsRightMark(v))
+            //this.value = 0;
+            //if (IsRightMark(v))
                 this.value = v;
         }
 
         // Получение оценки
-        public int Get()
+        public T Get()
         {
             return value;
         }
+
+        // Вывод данных на дисплей
+        public void DisplayValue()
+        {
+            Console.Write("Оценка: " + value + "\n");
+        }
+
 
         /*
         // Ввод данных в класс Оценка
@@ -49,6 +56,7 @@ namespace lab6_csh
         }
         */
 
+        /*
         // Ввод данных в Класс Оценка
         public void InpMark()
         {
@@ -71,15 +79,13 @@ namespace lab6_csh
                 //std::cerr << "Error: " << "It string is not number!" << '\n';
             }
         }
+        */
 
-        // Вывод данных на дисплей
-        public void DisplayValue()
-        {
-            Console.Write("Оценка: " + value + "\n");
-        }
+        
 
+        /*
         // Проверка возврата значения по ref
-        public void TestRef4(ref int Value)
+        public void TestRef4(ref T Value)
         {
             Value = 4;
         }
@@ -89,7 +95,9 @@ namespace lab6_csh
         {
             Value = 5;
         }
+        */
 
+        /*
         public static Mark operator +(Mark operand1, Mark operand2)
             => new Mark(operand1.value + operand2.value);
 
@@ -129,6 +137,7 @@ namespace lab6_csh
 
             //return res;
         }
+        */
 
 
         }

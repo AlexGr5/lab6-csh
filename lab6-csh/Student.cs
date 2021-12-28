@@ -10,7 +10,7 @@ namespace lab6_csh
         //private string fam = "";                    // Фамилия
         //private string name = "";                   // Имя
         //private string otch = "";                   // Отчество
-        private Mark[] marks = new Mark [20];       // Массив оценок
+        private Mark<int>[] marks = new Mark<int>[20];       // Массив оценок
         private Lesson[] lessons = new Lesson[20];  // Массив уроков
         private int countLess = 0;                  // Текущее кол-во уроков
 
@@ -21,7 +21,7 @@ namespace lab6_csh
             name = "";
             otch = "";
             Lesson L = new Lesson();
-            Mark M = new Mark();
+            Mark<int> M = new Mark<int>();
             L.Null();
             M.Set(0);
             countLess = 0;
@@ -43,7 +43,7 @@ namespace lab6_csh
             name = "";
             otch = "";
             Lesson L = new Lesson();
-            Mark M = new Mark();
+            Mark<int> M = new Mark<int>();
             L.Null();
             M.Set(0);
             countLess = 0;
@@ -60,7 +60,7 @@ namespace lab6_csh
         }
 
         // Конструктор с параметрами
-        public Student(string Fam, string Name, string Otch, Mark[] mas_m, int LenMark, Lesson[] mas_l, int LenLess)
+        public Student(string Fam, string Name, string Otch, Mark<int>[] mas_m, int LenMark, Lesson[] mas_l, int LenLess)
             : base(Fam, Name, Otch)
         {
             this.fam = Fam;
@@ -90,7 +90,7 @@ namespace lab6_csh
             name = "";
             otch = "";
             Lesson L = new Lesson();
-            Mark M = new Mark();
+            Mark<int> M = new Mark<int>();
             L.Null();
             M.Set(0);
             this.countLess = 0;
@@ -122,9 +122,9 @@ namespace lab6_csh
             return this.otch;
         }
 
-        public Mark GetMarkByNumber(int i)
+        public Mark<int> GetMarkByNumber(int i)
         {
-            Mark m = new Mark();
+            Mark<int> m = new Mark<int>();
             if (i < 20 && i > -1)
                 m = marks[i];
 
@@ -159,7 +159,7 @@ namespace lab6_csh
         }
 
         // Установка Оценок
-        public void SetMarks(Mark[] mas_m, int LenMark)
+        public void SetMarks(Mark<int>[] mas_m, int LenMark)
         {
             for (int i = 0; i < LenMark && i < 20; i++)
             {
@@ -179,7 +179,7 @@ namespace lab6_csh
         }
 
         // Задание полей класса Ученик
-        public void Set(string Fam, string Name, string Otch, Mark[] mas_m, int LenMark, Lesson[] mas_l, int LenLess)
+        public void Set(string Fam, string Name, string Otch, Mark<int>[] mas_m, int LenMark, Lesson[] mas_l, int LenLess)
         {
             this.fam = Fam;
             this.name = Name;
@@ -232,7 +232,7 @@ namespace lab6_csh
 
         // Добавление к ученику урока и оценки
         // 0 - не удачно, 1 - удачно
-        public bool AddLessAndMark(Lesson ls, Mark m)
+        public bool AddLessAndMark(Lesson ls, Mark<int> m)
         {
             bool fl = false;
 
@@ -252,7 +252,7 @@ namespace lab6_csh
 
         // Добавление к ученику оценки к конкретному предмету
         // 0 - не удачно, 1 - удачно
-        public bool AddMark(Lesson ls, Mark m)
+        public bool AddMark(Lesson ls, Mark<int> m)
         {
             bool fl = false;
 
