@@ -23,7 +23,7 @@ namespace lab6_csh
     }
 
     // Класс персона
-    public abstract class Persone : IHuman
+    public /*abstract*/ class Persone : IHuman
     {
         // Фамилия
         protected string fam;
@@ -120,7 +120,7 @@ namespace lab6_csh
         }
 
         // Ввод ФИО человека
-        public virtual void InpFIO()
+        public /*virtual*/ void InpFIO()
         {
             Console.Write("Введите Фамилию: ");
             fam = Console.ReadLine();
@@ -131,7 +131,7 @@ namespace lab6_csh
         }
 
         // Вывод человека
-        public virtual void DisplayInfo()
+        public /*virtual*/ void DisplayInfo()
         {
             Console.Write("ФИО: " + fam + " " + name + " " + otch + "\n");
 

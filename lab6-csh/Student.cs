@@ -201,7 +201,7 @@ namespace lab6_csh
         }
 
         // Ввод ФИО ученика в класс
-        public override void InpFIO()
+        public /*override*/ void InpFIO()
         {
             Console.Write("Введите Фамилию ученика: ");
             fam = Console.ReadLine();
@@ -278,7 +278,7 @@ namespace lab6_csh
         }
 
         // Вывод ученика
-        public override void DisplayInfo()
+        public /*override*/ void DisplayInfo()
         {
             Console.Write("ФИО ученика: " + fam + " " + name + " " + otch + "\n");
 

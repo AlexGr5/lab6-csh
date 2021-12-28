@@ -4,6 +4,7 @@ using System.Text;
 
 namespace lab6_csh
 {
+
     // Класс Учитель
     public class Teacher : Persone
     {
@@ -105,7 +106,7 @@ namespace lab6_csh
         }
 
         // Ввод ФИО учителя
-        public override void InpFIO()
+        public /*override*/ void InpFIO()
         {
             Console.Write("Введите Фамилию учителя: ");
             fam = Console.ReadLine();
@@ -116,7 +117,7 @@ namespace lab6_csh
         }
 
         // Ввод учителя
-        public override void DisplayInfo()
+        public /*override*/ void DisplayInfo()
         {
             Console.Write("ФИО учителя: " + fam + " " + name + " " + otch + "\n");
 
