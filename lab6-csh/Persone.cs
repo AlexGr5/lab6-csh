@@ -23,7 +23,7 @@ namespace lab6_csh
     }
 
     // Класс персона
-    public abstract class Persone : IHuman
+    public /*abstract*/ class Persone /*: IHuman*/
     {
         // Фамилия
         protected string fam;
